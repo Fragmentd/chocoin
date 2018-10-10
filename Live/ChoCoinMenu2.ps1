@@ -27,6 +27,10 @@ $menu=@"
    - B4 Install Opera
 
  + C Tools
+   - C1 Placeholder
+   - C2 Placeholder
+   - C3 Placeholder
+
 Q Quit
 
 Select a task by number or Q to quit
@@ -34,7 +38,6 @@ Select a task by number or Q to quit
 #Menu end
 Write-Host "ChoCoin - The Chocolatey Installer" -ForegroundColor Cyan
 $r = Read-Host $menu
-
 <# Item Entry Template
 "xX" {
     #Write-Host "Item Text" -ForegroundColor Green
@@ -48,17 +51,14 @@ Switch ($r) {
     Set-ExecutionPolicy Bypass -Scope Process -Force
     write-Host "Execution Policy Status: $ExecutionPolicyStatus"
 }
-
 "a2" {
     Write-Host "Install Chocolatey" -ForegroundColor Green
     iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
-
 "a3" {
     Write-Host "Install ChocolateyGUI" -ForegroundColor Green
     Choco install -y ChocolateyGUI
 }
-
 "a4" {
     Write-Host "Update Chocolatey" -ForegroundColor Green
     choco upgrade -y chocolatey
