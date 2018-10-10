@@ -9,8 +9,17 @@
     - ccleaner
     - HWiNFO
   - Browsers
+    - Vivaldi
+    - Firefox
+    - Opera
   - Etc.
 ---
 ### Script options
 - Customizations
-  -
+  - Color Options?
+  - Update Options
+  - Menu?
+---
+### General
+- Update Functions
+-

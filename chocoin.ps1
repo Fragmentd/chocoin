@@ -1,8 +1,9 @@
 ﻿<#
 ==================================================
-=== Name: chocoin.ps1
+=== Name: ChoCoin.ps1
 === Purpose: To automate the install of package favorites.
 === Author: Brandon McKinley - FragD
+=== ∩┌┐┐∩(◣ _ ◢)∩┌┐┐∩
 === Date Sept 15, 2018
 === Disclaimer: Use at your own Risk!
 === ToDo: Please see todo.md
@@ -21,72 +22,105 @@
        - Color Changes.
        - More Color Changes.
        - Reorder of Notes - Switched the positions of the  Disclaimer and Info Section.
-0.05 - Oct 09, 2018
+0.1 - Oct 09, 2018 - Moving to beta!
+    + Complete
+       - Chocolatey Installer Complete
     + Added:
-      - Chocolatey Installer Complete
+       - ChocolateyGUI Install Complete
+       - Section titles
+       - Section Footers
+       - Browser Section added - Needs completed
     + Changed:
+      - Version Text to Yellow - to match beta status
+      - More Color Changes
 
 === Disclaimer: Use at your own Risk!
 ================================================== #>
-# Variables Section
-$VersionNumber = "0.05 Alpha"
+
+#====================VARIABLES SECTION====================
+$VersionNumber = "0.10 BETA"
 $ExecutionPolicyStatus = get-executionpolicy
 $chocoversion = choco --version
+$ForegroundColorHeader = -ForegroundColor Green
+$BackgroundColorHeader = -BackgroundColor Black
 
-# This section will print the title of the scrip.
-# $VersionNumber
-Write-host "====================INFO======================" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "| Choco Favorites Installer - ChocoIn        |" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host -NoNewline "| Version Number:"             -ForegroundColor DarkGray -BackgroundColor Black
-Write-host -NoNewline $VersionNumber  -ForegroundColor Red -BackgroundColor Black
-Write-host "                  |"             -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "| Please submit change requests              |" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "| Or Feedback to:                            |" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "|          FragDProjects@gmail.com           |" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "==============================================" -ForegroundColor DarkGray -BackgroundColor Black
+#====================TITLE SECTION====================
+##This section will print the title of the scrip.
+Write-Host "=====================INFO======================" -ForegroundColor $ForegroundColorHeader -BackgroundColor $BackgroundColorHeader
+Write-Host -NoNewline "| " -ForegroundColor Green -BackgroundColor Black
+write-Host -NoNewline "Choco Favorites Installer - ChocoIn" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "        |" -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewline "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewline "Version Number:" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host -NoNewline $VersionNumber  -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "                   |" -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewLine "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewline "Please submit change requests" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "              |" -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewLine "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewLine "Or Feedback to:" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "                            |" -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewLine "|          " -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewLine "FragDProjects@gmail.com" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "           |" -ForegroundColor DarkGray -BackgroundColor Black
+Write-Host "===============================================" -ForegroundColor Green -BackgroundColor Black
 
-# Disclaimer Print out
-Write-host "==============================================" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "|! ! ! Disclaimer: Use at your own Risk ! ! !|" -ForegroundColor DarkGray -BackgroundColor Black
-Write-host "==============================================" -ForegroundColor DarkGray -BackgroundColor Black
-
-# Pause
+#====================DISCLAIMER====================
+##Disclaimer Print out
+Write-Host "==================DISCLAIMER===================" -ForegroundColor Green -BackgroundColor Black
+Write-Host -NoNewLine "|" -ForegroundColor Green -BackgroundColor Black
+write-Host -NoNewLine "! ! ! Disclaimer: Use at your own Risk ! ! !" -ForegroundColor Red -BackgroundColor Black
+write-Host " | "-ForegroundColor Green -BackgroundColor Black
+Write-Host "===============================================" -ForegroundColor Green -BackgroundColor Black
+##Pause
 Start-Sleep -s 3
 
-Write-host "! ! ! WARNING ! ! !" -ForegroundColor Red -BackgroundColor Black
-Write-host "Continuing will set Execution Policy for the entire system!"
-Write-host "Answering No will exit the script." -ForegroundColor Red -BackgroundColor Black
-
+#====================EXECUTIONPOLICY====================
+Write-Host "+ EXECUTION POLICY" -ForegroundColor White -BackgroundColor Black
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
+Write-Host "! ! ! WARNING ! ! !" -ForegroundColor Red -BackgroundColor Black
+Write-Host "Continuing will set Execution Policy for the entire system!"
+Write-Host "Answering No will exit the script." -ForegroundColor Red -BackgroundColor Black
 $confirmationexepol = Read-Host "[y|n]"
 if ($confirmationexepol -eq 'y') {
-Write-host "Bypassing Execution Policy" -ForegroundColor Green -BackgroundColor Black
-
-# Sets ExecutionPolicy Bypass, (Is this even needed? As execution policy needs to be set before this script would run).
+Write-Host "Bypassing Execution Policy" -ForegroundColor Green -BackgroundColor Black
+##Sets ExecutionPolicy Bypass, (Is this even needed? As execution policy needs to be set before this script would run).
 Set-ExecutionPolicy Bypass -Scope Process -Force
-
-# Retrieve the execution policy status.
-write-host "Execution Policy Status: $ExecutionPolicyStatus"
-
-# Pause
+##Retrieve the execution policy status.
+write-Host "Execution Policy Status: $ExecutionPolicyStatus"
+##Pause
 Start-Sleep -s 1
 } else {exit}
+##Line Break
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
 
-#Line Break
-Write-host "==============================================" -ForegroundColor Green -BackgroundColor Black
-
-#Chocolatey Install
-Write-host "Would you like to Download and Install Chocolatey?" -ForegroundColor Green -BackgroundColor Black
-
+#====================CHOCOLATEY INSTALL SECTION====================
+Write-Host "+ CHOCOLATEY INSTALLER" -ForegroundColor White -BackgroundColor Black
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
+Write-Host "Would you like to Download and Install Chocolatey?" -ForegroundColor Green -BackgroundColor Black
 $confirmationChoco = Read-Host "[y|n]"
 if ($confirmationChoco -eq 'y') {
-
-# Pause
+##Pause
 Start-Sleep -s 2
-
-Write-host "Chocolatey Is now being downloaded" -ForegroundColor Green -BackgroundColor Black
-
+Write-Host "Chocolatey Is now being downloaded" -ForegroundColor Green -BackgroundColor Black
 # Downloads and Installs Chocolatey
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 } else {exit}
 
+#Prints Chocolatey Verison Information
 Write-Host "Chocolatey Installed Version is: $chocoversion"
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
+
+#====================CHOCOLATEY GUI INSTALLER====================
+Write-Host "+ CHOCOLATEYGUI INSTALLER" -ForegroundColor White -BackgroundColor Black
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
+Write-Host "Would you like to Install ChocolateyGUI?"
+$confirmationChocoGUI = Read-Host "[y|n]"
+if ($confirmationChocoGUI -eq 'y') {
+choco install -y ChocolateyGUI
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
+} Else {exit}
+
+#====================BROWSERS====================
+Write-Host "+ BROWSER CHOICE" -ForegroundColor White -BackgroundColor Black
+Write-Host "==============================================" -ForegroundColor Green -BackgroundColor Black
