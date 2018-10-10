@@ -33,45 +33,50 @@
     + Changed:
       - Version Text to Yellow - to match beta status
       - More Color Changes
+0.11 - Oct 10, 2018 - Adding more color options yet again...
+    +Complete
+    +Chaged
+      - Changed Color Layout options
+    +Added
 
 === Disclaimer: Use at your own Risk!
 ================================================== #>
 
 #====================VARIABLES SECTION====================
-$VersionNumber = "0.10 BETA"
+$VersionNumber = "0.11 BETA"
 $ExecutionPolicyStatus = get-executionpolicy
 $chocoversion = choco --version
-$ForegroundColorHeader = -ForegroundColor Green
-$BackgroundColorHeader = -BackgroundColor Black
+$ForegroundColorHeaderBorder = 'Green'
+$BackgroundColorHeaderBorder = 'Black'
 
 #====================TITLE SECTION====================
 ##This section will print the title of the scrip.
-Write-Host "=====================INFO======================" -ForegroundColor $ForegroundColorHeader -BackgroundColor $BackgroundColorHeader
-Write-Host -NoNewline "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host "=====================INFO======================" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host -NoNewline "| " -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 write-Host -NoNewline "Choco Favorites Installer - ChocoIn" -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "        |" -ForegroundColor Green -BackgroundColor Black
-Write-Host -NoNewline "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host "         |" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host -NoNewline "| " -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 Write-Host -NoNewline "Version Number:" -ForegroundColor Yellow -BackgroundColor Black
 Write-Host -NoNewline $VersionNumber  -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "                   |" -ForegroundColor Green -BackgroundColor Black
-Write-Host -NoNewLine "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host "                    |" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host -NoNewLine "| " -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 Write-Host -NoNewline "Please submit change requests" -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "              |" -ForegroundColor Green -BackgroundColor Black
-Write-Host -NoNewLine "| " -ForegroundColor Green -BackgroundColor Black
+Write-Host "               |" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host -NoNewLine "| " -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 Write-Host -NoNewLine "Or Feedback to:" -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "                            |" -ForegroundColor Green -BackgroundColor Black
-Write-Host -NoNewLine "|          " -ForegroundColor Green -BackgroundColor Black
+Write-Host "                             |" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host -NoNewLine "|          " -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 Write-Host -NoNewLine "FragDProjects@gmail.com" -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "           |" -ForegroundColor DarkGray -BackgroundColor Black
-Write-Host "===============================================" -ForegroundColor Green -BackgroundColor Black
+Write-Host "            |" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host "===============================================" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 
 #====================DISCLAIMER====================
 ##Disclaimer Print out
-Write-Host "==================DISCLAIMER===================" -ForegroundColor Green -BackgroundColor Black
-Write-Host -NoNewLine "|" -ForegroundColor Green -BackgroundColor Black
+Write-Host "==================DISCLAIMER===================" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host -NoNewLine "|" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 write-Host -NoNewLine "! ! ! Disclaimer: Use at your own Risk ! ! !" -ForegroundColor Red -BackgroundColor Black
-write-Host " | "-ForegroundColor Green -BackgroundColor Black
-Write-Host "===============================================" -ForegroundColor Green -BackgroundColor Black
+write-Host " | "-ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
+Write-Host "===============================================" -ForegroundColor $ForegroundColorHeaderBorder -BackgroundColor $BackgroundColorHeaderBorder
 ##Pause
 Start-Sleep -s 3
 

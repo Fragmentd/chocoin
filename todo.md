@@ -12,6 +12,7 @@
     - Vivaldi
     - Firefox
     - Opera
+    - Chrome
   - Etc.
 ---
 ### Script options
