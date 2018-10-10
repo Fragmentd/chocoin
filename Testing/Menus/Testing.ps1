@@ -14,9 +14,9 @@ Write-Host -NoNewLine "]"
 Write-Host -NoNewLine `t`n "A1 - " -foregroundcolor $foregroundColor
 Write-host -NoNewLine "Set Execution Policy"
 Write-Host -NoNewLine `t`n "A2 - " -foregroundcolor $foregroundColor
-Write-host -NoNewLine "Enter PowerShell session on DC"
+Write-host -NoNewLine "Install Chocolatey"
 Write-Host -NoNewLine `t`n "A3 - " -foregroundcolor $foregroundColor
-Write-host -NoNewLine "Run DCDiag on a DC (or all DCs)"`n`n
+Write-host -NoNewLine ""`n`n
 
 Write-Host -NoNewLine "<" -foregroundcolor $foregroundColor
 Write-Host -NoNewLine "Exchange"

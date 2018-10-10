@@ -3,6 +3,7 @@
 === Name: ChoCoin.ps1
 === Purpose: To automate the install of package favorites.
 === Author: Brandon McKinley - FragD
+=== Email: FragDProjects@gmail.com
 === ∩┌┐┐∩(◣ _ ◢)∩┌┐┐∩
 === Date Sept 15, 2018
 === Disclaimer: Use at your own Risk!
